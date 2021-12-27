@@ -1,3 +1,8 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 /**
  * @desc:
  * @author: CuiShiHao
@@ -5,29 +10,41 @@
 public class Main {
     public static void main(String[] args) {
         int[] nums1 = {1, 2, 3, 0, 0, 0};
-        int m = 3;
         int[] nums2 = {2, 5, 6};
-        int n = 3;
-        merge(nums1, m, nums2, n);
+
+        merge(nums1, 3, nums2, 3);
+        // intersect(nums1, nums2);
     }
 
 
-    public static void merge(int[] nums1, int m, int[] nums2, int n) {
-        int mIndex = 0;
-        int nIndex = 0;
-        int[] result = new int[nums1.length];
-
-        for (int i = 0; i < m + n; i++) {
-            if (nums1[mIndex] <= nums2[nIndex] && nums1[mIndex] != 0) {
-                result[i] = nums1[mIndex];
-                mIndex++;
+    public static int[] intersect(int[] nums1, int[] nums2) {
+        List<Integer> resultList = new ArrayList();
+        Map<Integer, Integer> map = new HashMap<>(nums1.length + nums2.length);
+        for (int i = 0; i < nums1.length; i++) {
+            Integer count = map.get(nums1[i]);
+            if (count == null) {
+                map.put(nums1[i], 1);
             } else {
-                result[i] = nums2[nIndex];
-                nIndex++;
+                map.put(nums1[i], ++count);
             }
         }
-        for (int i = 0; i < nums1.length; i++) {
-            nums1[i] = result[i];
+
+        for (int i = 0; i < nums2.length; i++) {
+            Integer count = map.get(nums2[i]);
+            if (count == null || count == 0) {
+                map.put(nums2[i], 0);
+            } else {
+                map.put(nums2[i], count - 1);
+                resultList.add(nums2[i]);
+            }
         }
+
+        int[] result = new int[resultList.size()];
+        for (int i = 0; i < resultList.size(); i++) {
+            result[i] = resultList.get(i);
+        }
+        return result;
+
     }
+
 }
