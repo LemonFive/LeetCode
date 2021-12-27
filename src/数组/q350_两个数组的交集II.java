@@ -3,7 +3,7 @@ package 数组;
 import java.util.HashSet;
 
 /**
- * @desc: -todo review1
+ * @desc: -todo review0
  * @author: CuiShiHao
  **/
 public class q350_两个数组的交集II {
