@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @desc: todo review2
+ * @desc: -todo review3
  * @author: CuiShiHao
  **/
 public class q1_两数之和 {

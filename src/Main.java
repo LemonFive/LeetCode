@@ -9,42 +9,33 @@ import java.util.Map;
  **/
 public class Main {
     public static void main(String[] args) {
-        int[] nums1 = {1, 2, 3, 0, 0, 0};
-        int[] nums2 = {2, 5, 6};
+        char chr = '9';
+        int num = chr;
 
-        merge(nums1, 3, nums2, 3);
-        // intersect(nums1, nums2);
+        int value = chr - '0' - 1;
+        System.out.println(num);
     }
 
 
-    public static int[] intersect(int[] nums1, int[] nums2) {
-        List<Integer> resultList = new ArrayList();
-        Map<Integer, Integer> map = new HashMap<>(nums1.length + nums2.length);
-        for (int i = 0; i < nums1.length; i++) {
-            Integer count = map.get(nums1[i]);
-            if (count == null) {
-                map.put(nums1[i], 1);
-            } else {
-                map.put(nums1[i], ++count);
-            }
+    public static List<List<Integer>> generate(int numRows) {
+        List<List<Integer>> result = new ArrayList<>();
+        result.add(new ArrayList<Integer>() {{
+            add(1);
+        }});
+        if (numRows == 1) {
+            return result;
         }
 
-        for (int i = 0; i < nums2.length; i++) {
-            Integer count = map.get(nums2[i]);
-            if (count == null || count == 0) {
-                map.put(nums2[i], 0);
-            } else {
-                map.put(nums2[i], count - 1);
-                resultList.add(nums2[i]);
+        for (int i = 2; i <= numRows; i++) {
+            List<Integer> list = new ArrayList<>();
+            list.add(1);
+            for (int m = 2; m < i; m++) {
+                list.add(result.get(i - 2).get(m - 1) + result.get(i - 2).get(m - 2));
             }
-        }
-
-        int[] result = new int[resultList.size()];
-        for (int i = 0; i < resultList.size(); i++) {
-            result[i] = resultList.get(i);
+            list.add(1);
+            result.add(list);
         }
         return result;
-
     }
 
 }
