@@ -1,7 +1,5 @@
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @desc:
@@ -9,11 +7,13 @@ import java.util.Map;
  **/
 public class Main {
     public static void main(String[] args) {
-        char chr = '9';
-        int num = chr;
+        String s = "anagram";
+        int[] charArray = new int[26];
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            charArray[c - 'a']++;
+        }
 
-        int value = chr - '0' - 1;
-        System.out.println(num);
     }
 
 
