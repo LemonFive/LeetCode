@@ -1,7 +1,7 @@
 package 二分查找;
 
 /**
- * @desc: -todo review0
+ * @desc: -todo review1
  * @author: CuiShiHao
  **/
 public class q704_二分查找 {
