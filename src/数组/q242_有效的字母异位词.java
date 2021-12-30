@@ -3,7 +3,7 @@ package 数组;
 import java.util.Arrays;
 
 /**
- * @desc: -todo review0
+ * @desc: -todo review1
  * @author: CuiShiHao
  **/
 public class q242_有效的字母异位词 {

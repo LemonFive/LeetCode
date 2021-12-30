@@ -1,7 +1,7 @@
 package 链表;
 
 /**
- * @desc: -todo review0
+ * @desc: -todo review1
  * @author: CuiShiHao
  **/
 public class q141_环形链表 {
