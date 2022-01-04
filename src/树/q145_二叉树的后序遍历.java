@@ -15,9 +15,9 @@ public class q145_二叉树的后序遍历 {
             return resultList;
         }
 
+        postorderTraversal(root.left);
         postorderTraversal(root.right);
         resultList.add(root.val);
-        postorderTraversal(root.left);
 
         return resultList;
     }
