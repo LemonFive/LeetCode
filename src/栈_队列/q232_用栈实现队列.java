@@ -3,7 +3,7 @@ package 栈_队列;
 import java.util.Stack;
 
 /**
- * @desc: -todo review0
+ * @desc: -todo review1
  * @author: CuiShiHao
  **/
 public class q232_用栈实现队列 {

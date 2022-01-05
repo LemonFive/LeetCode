@@ -1,21 +1,26 @@
 package 数组;
 
 /**
- * @desc: -todo review1
+ * @desc: -todo review2
  * @author: CuiShiHao
  **/
 public class q88_合并两个有序数组 {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
-        while (m >0 || n > 0) {
-            if (m == 0) {
-                nums1[m + n - 1] = nums2[--n];
-            } else if (n == 0) {
-                nums1[m + n - 1] = nums1[--m];
-            } else if (nums1[m - 1] <= nums2[n - 1]) {
-                nums1[m + n - 1] = nums2[--n];
-            } else if (nums1[m - 1] > nums2[n - 1]) {
-                nums1[m + n - 1] = nums1[--m];
+        int p1 = 0;
+        int p2 = 0;
+        int[] result = new int[m + n];
+        for (int i = 0; i < m + n; i++) {
+            if (p1 == m) {
+                result[i] = nums2[p2++];
+            } else if (p2 == n) {
+                result[i] = nums1[p1++];
+            } else {
+                result[i] = nums1[p1] < nums2[p2] ? nums1[p1++] : nums2[p2++];
             }
+        }
+
+        for (int i = 0; i < m + n; i++) {
+            nums1[i] = result[i];
         }
     }
 }
