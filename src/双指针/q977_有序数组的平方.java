@@ -1,7 +1,7 @@
 package 双指针;
 
 /**
- * @desc: -todo review0 双指针算法：时间复杂度O(n)
+ * @desc: -todo review1 双指针算法：时间复杂度O(n)
  * @author: CuiShiHao
  **/
 public class q977_有序数组的平方 {
