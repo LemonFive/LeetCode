@@ -1,7 +1,7 @@
 package 链表;
 
 /**
- * @desc: -todo review0
+ * @desc: -todo review1
  * @author: CuiShiHao
  **/
 public class q2_两数相加 {
